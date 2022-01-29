@@ -4,7 +4,8 @@ module.exports = {
   content: [
     './app/helpers/**/*.rb',
     './app/javascript/**/*.js',
-    './app/views/**/*'
+    './app/views/**/*',
+    './vendor/bundle/ruby/**/kaminari-core-*/app/views/**/*'
   ],
   theme: {
     extend: {
