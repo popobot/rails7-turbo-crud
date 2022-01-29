@@ -1,0 +1,9 @@
+<%= turbo_stream.prepend 'articles' do %>
+  <%= render @article %>
+<% end %>
+
+<%= turbo_stream.replace 'new_article' do %>
+  <%= turbo_frame_tag 'new_article', src: articles_path do %>
+  <% end %>
+<% end %>
+

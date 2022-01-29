@@ -1,13 +1,15 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i[ show edit update destroy ]
+  before_action :redirect_index, only: %i[ new show edit ]
 
   # GET /articles
   def index
-    @articles = Article.all
+    @articles = Article.order(id: :desc).page(params[:page]).per(3)
   end
 
   # GET /articles/1
   def show
+    render :show_detail if params[:detail]
   end
 
   # GET /articles/new
@@ -24,7 +26,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
 
     if @article.save
-      redirect_to @article, notice: "Article was successfully created."
+      render :create
     else
       render :new, status: :unprocessable_entity
     end
@@ -33,7 +35,7 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1
   def update
     if @article.update(article_params)
-      redirect_to @article, notice: "Article was successfully updated."
+      redirect_to @article
     else
       render :edit, status: :unprocessable_entity
     end
@@ -42,13 +44,17 @@ class ArticlesController < ApplicationController
   # DELETE /articles/1
   def destroy
     @article.destroy
-    redirect_to articles_url, notice: "Article was successfully destroyed."
+    render turbo_stream: turbo_stream.remove(@article)
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_article
       @article = Article.find(params[:id])
+    end
+
+    def redirect_index
+      redirect_to articles_url unless turbo_frame_request?
     end
 
     # Only allow a list of trusted parameters through.

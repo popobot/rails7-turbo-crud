@@ -1,0 +1,11 @@
+<%= turbo_frame_tag @article do %>
+  <div class="py-3 px-5 my-3 rounded-md border border-gray-200 shadow-md">
+    <%= render 'article_detail', article: @article %>
+
+    <%= link_to 'Edit', edit_article_path(@article), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <div class="inline-block ml-2">
+      <%= button_to 'Destroy', article_path(@article), method: :delete, form: { data: { turbo_confirm: "Are you sure?" } }, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+    </div>
+    <%= link_to 'Back', article_path(@article), class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  </div>
+<% end %>
