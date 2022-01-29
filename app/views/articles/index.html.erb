@@ -7,8 +7,8 @@
     </div>
   <% end %>
 
-  <div id="articles" class="min-w-full">
+  <%= turbo_frame_tag 'articles' do %>
     <%= render @articles %>
     <%= paginate @articles %>
-  </div>
+  <% end %>
 </div>
