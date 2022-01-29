@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles
   def index
-    @articles = Article.order(id: :desc).all
+    @articles = Article.order(id: :desc).page(params[:page]).per(3)
   end
 
   # GET /articles/1
