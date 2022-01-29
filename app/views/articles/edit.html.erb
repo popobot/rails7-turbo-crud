@@ -1,8 +1,9 @@
-<div class="mx-auto md:w-2/3 w-full">
-  <h1 class="font-bold text-4xl">Editing article</h1>
-
-  <%= render "form", article: @article %>
-
-  <%= link_to "Show this article", @article, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-  <%= link_to "Back to articles", articles_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-</div>
+<%= turbo_frame_tag @article do %>
+  <div class="py-3 px-5 my-3 rounded-md border border-gray-200 shadow-md">
+    <h2 class="font-bold text-2xl">Editing article</h2>
+  
+    <%= render "form", article: @article %>
+  
+    <%= link_to "Back to articles", articles_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  </div>
+<% end %>
