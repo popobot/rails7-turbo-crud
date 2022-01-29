@@ -8,6 +8,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1
   def show
+    render :show_detail if params[:detail]
   end
 
   # GET /articles/new

@@ -1,16 +1,8 @@
 <%= turbo_frame_tag article do %>
   <div class="py-3 px-5 my-3 rounded-md border border-gray-200 shadow-md">
-    <p class="my-5">
-      <strong class="block font-medium mb-1">Title:</strong>
-      <%= article.title %>
-    </p>
+    <h2 class="font-bold text-2xl"><%= article.title %></h2>
 
-    <p class="my-5">
-      <strong class="block font-medium mb-1">Content:</strong>
-      <%= article.content %>
-    </p>
-
-    <%= link_to "Show this article", article, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Show this article", article_path(article, detail: 1), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <%= link_to 'Edit this article', edit_article_path(article), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
   </div>
 <% end %>
