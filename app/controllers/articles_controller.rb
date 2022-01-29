@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i[ show edit update destroy ]
+  before_action :redirect_index, only: %i[ new show edit ]
 
   # GET /articles
   def index
@@ -50,6 +51,10 @@ class ArticlesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_article
       @article = Article.find(params[:id])
+    end
+
+    def redirect_index
+      redirect_to articles_url unless turbo_frame_request?
     end
 
     # Only allow a list of trusted parameters through.
