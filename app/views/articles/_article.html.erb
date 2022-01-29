@@ -2,7 +2,7 @@
   <div class="py-3 px-5 my-3 rounded-md border border-gray-200 shadow-md">
     <h2 class="font-bold text-2xl"><%= article.title %></h2>
 
-    <%= link_to "Show this article", article_path(article, detail: 1), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this article', edit_article_path(article), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Show", article_path(article, detail: 1), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit', edit_article_path(article), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
   </div>
 <% end %>
