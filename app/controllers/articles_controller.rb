@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles
   def index
-    @articles = Article.all
+    @articles = Article.order(id: :desc).all
   end
 
   # GET /articles/1
