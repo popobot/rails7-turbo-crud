@@ -14,7 +14,11 @@ class ArticlesController < ApplicationController
 
   # GET /articles/new
   def new
-    @article = Article.new
+    if params[:button]
+      render :_new_button
+    else
+      @article = Article.new
+    end
   end
 
   # GET /articles/1/edit

@@ -3,7 +3,6 @@
 <% end %>
 
 <%= turbo_stream.replace 'new_article' do %>
-  <%= turbo_frame_tag 'new_article', src: articles_path do %>
-  <% end %>
+  <%= render "new_button" %>
 <% end %>
 
