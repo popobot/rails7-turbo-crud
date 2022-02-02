@@ -2,11 +2,13 @@
 
 - Rails 7.0.1
 - Turbo Frame & Turbo Stream 利用
-- Tailwind CSSを利用
+- Tailwind CSS 利用
 
 ## Turboを使ってSPAライクな試作してみた
 
-<img width="800" alt="スクリーンショット" src="https://user-images.githubusercontent.com/26326344/151680377-9516980d-b34a-4b35-b8bf-028d393c5a32.png">
+※ 変更点は[PR](https://github.com/popobot/rails7-turbo-crud/pull/1)を参照
+
+<img width="600" alt="スクリーンショット" src="https://user-images.githubusercontent.com/26326344/152086044-4f9ff3d1-35da-45d6-95ac-4ee71b494ce1.png">
 
 - Newボタンを押すと、新規追加フォームに切り替わる
 - Editボタンを押すと、編集フォームに切り替わる
@@ -15,4 +17,10 @@
 - kaminariを使った、ページネーションに対応
 - Flashメッセージには対応してない...
 
-※ 変更点は[PR](https://github.com/popobot/rails7-turbo-crud/pull/1)を参照
+### 追加フォーム
+
+<img width="600" alt="スクリーンショット" src="https://user-images.githubusercontent.com/26326344/152086048-cd9cb04f-d1aa-4ef9-b46f-4a6bc331c600.png">
+
+### 編集フォーム
+
+<img width="600" alt="スクリーンショット" src="https://user-images.githubusercontent.com/26326344/152085815-6c5195cd-daad-47f9-a8a3-f986d49731f8.png">
