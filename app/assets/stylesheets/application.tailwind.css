@@ -2,14 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-.pagination {
-  @apply flex justify-center space-x-1 my-4;
-}
 
-.pagination a {
-  @apply block px-4 py-2 text-gray-700 bg-gray-200 rounded-md hover:bg-blue-400 hover:text-white
-}
+@layer components {
+  .pagination {
+    @apply flex justify-center space-x-1 my-4;
+  }
 
-.pagination .current {
-  @apply block px-4 py-2 text-gray-700 bg-blue-200 rounded-md hover:bg-blue-400 hover:text-white
+  .pagination a {
+    @apply block rounded-lg py-3 px-5 bg-gray-100 font-medium
+  }
+
+  .pagination .gap {
+    @apply block py-3 px-3 font-medium
+  }
+
+  .pagination .current {
+    @apply block rounded-lg py-3 px-5 bg-blue-100 font-medium
+  }
 }
